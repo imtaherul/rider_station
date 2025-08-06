@@ -88,7 +88,7 @@ export default function HomePage() {
               Contact
             </Link>
             <Button className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700">
-              Get Started
+              <Link href="#getstarted">Get Started</Link>
             </Button>
           </nav>
 
@@ -127,7 +127,7 @@ export default function HomePage() {
                   className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700"
                 >
                   <Zap className="mr-2 h-5 w-5" />
-                  Start Your Journey
+                  <Link href="#getstarted">Start Your Journey</Link>
                 </Button>
                 <Button
                   size="lg"
@@ -202,25 +202,49 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16">
             {[
-              { name: "Amazon", type: "E-commerce Giant" },
-              { name: "Noon", type: "Regional E-commerce" },
-              { name: "Noon Food", type: "Food Delivery" },
-              { name: "Noon Minutes", type: "Quick Commerce" },
-              { name: "Keeta", type: "Food Delivery" },
-              { name: "HungerStation", type: "Food Platform" },
-              { name: "Jahez", type: "Local Delivery" },
-              { name: "ToYou", type: "Multi-service" },
+              {
+                name: "Amazon",
+                type: "E-commerce Giant",
+                src: "images/amazon.svg",
+              },
+              {
+                name: "Noon",
+                type: "Regional E-commerce",
+                src: "images/noon.svg",
+              },
+              {
+                name: "Noon Food",
+                type: "Food Delivery",
+                src: "images/noonfood.svg",
+              },
+              {
+                name: "Noon Minutes",
+                type: "Quick Commerce",
+                src: "images/noonminutes.svg",
+              },
+              { name: "Keeta", type: "Food Delivery", src: "images/keeta.svg" },
+              {
+                name: "HungerStation",
+                type: "Food Platform",
+                src: "images/hungerstation.svg",
+              },
+              {
+                name: "Jahez",
+                type: "Local Delivery",
+                src: "images/jahez.svg",
+              },
+              { name: "ToYou", type: "Multi-service", src: "images/toyou.svg" },
             ].map((partner, index) => (
               <Card
                 key={index}
                 className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:from-orange-100 group-hover:to-amber-100 transition-all duration-300">
+                <CardContent className="p-3 text-center">
+                  <div className="w-50 h-50 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:from-orange-100 group-hover:to-amber-100 transition-all duration-300">
                     <img
-                      src={`/placeholder.svg?height=40&width=40&query=${partner.name} logo`}
+                      src={`/${partner.src}`}
                       alt={`${partner.name} Logo`}
-                      className="w-8 h-8 grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="w-40 h-40 grayscale group-hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                   <h3 className="font-semibold text-gray-900 mb-1">
@@ -1140,7 +1164,9 @@ export default function HomePage() {
       </section>
 
       {/* Contact Form Section */}
-      <ContactPage />
+      <div id="getstarted">
+        <ContactPage />
+      </div>
 
       {/* Final CTA Section */}
       <section className="py-20 bg-gray-900 text-white">
